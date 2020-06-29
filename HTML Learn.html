@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning HTML</title>
+	</head>
+	<body>
+	<nav>
+		<h4>
+			<a href="https://www.ncsu.edu" target="_blank">My School</a>
+			<a href="http://jakesfirefoxstartpage.weebly.com/" target="_blank">My Homepage</a>
+		</h4>
+	</nav>
+		<h1>Jake</h1>
+		<p>Hello! This is my cat:</p>
+		<image src="./meow.jpg" height="200" width="200">
+		<p>My cat's name is Pouncey.  He is great for the following reasons:</p>
+		<ol>
+			<li>He a <a href="https://en.wikipedia.org/wiki/Cuteness" target="_blank">cutie patootie</a></li>
+			<li>He a floofy boi</li>
+			<li>When he asleep (as pictured) he cute</li>
+			<li>Meow</li>
+		</ol>
+		<p>Here my Javascript...</p>
+		<button type="button" onclick="absolute()">
+			Hello
+		</button>
+		<button type="button" onclick="consoletest()">
+			What dis do?
+		</button>
+		<script type=text/javascript>
+			function absolute() {
+				let x;
+				let y;
+				y = prompt("Type a number to find the absolute value");
+				x = parseInt(y, 10);
+				if (x < 0 || x >= 0) {
+					alert("The absolute value of your number is " + Math.abs(x));
+				}
+				else if (y == null || y == "") {
+				}
+				else {
+					alert("That's not a number silly!");
+				}
+			}
+			function consoletest() {
+				let x = confirm("don't click ok");
+				if (x) {
+					window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO", "_self");
+				}
+				else {
+					alert("good.");
+				}
+			}
+		</script>
+	</body>
+</html>
