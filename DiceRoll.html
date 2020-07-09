@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<title> Dice Roller </title>
 <head>
+<title> Dice Roller </title>
 	<nav>
-		<a href="./game.html"> Pong </a>
-		<a href="./index.html"> Homepage </a>
+		<h4>
+			<a href="./index.html">Homepage</a> &nbsp;&nbsp;
+			<a href="./game.html">Pong</a>
+		</h4>
 	</nav>
 </head>
 <body>
@@ -18,25 +20,25 @@
 	<button onclick="rollIt()"> Click me to roll the dice! </button>
 	</p>
 	<br>
-	<image id="diepicture0" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture1" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture2" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture3" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture0" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture1" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture2" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture3" src="./Images/Dice 1.svg" height="100" width="100">
 	<br>
-	<image id="diepicture4" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture5" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture6" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture7" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture4" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture5" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture6" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture7" src="./Images/Dice 1.svg" height="100" width="100">
 	<br>
-	<image id="diepicture8" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture9" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture10" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture11" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture8" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture9" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture10" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture11" src="./Images/Dice 1.svg" height="100" width="100">
 	<br>
-	<image id="diepicture12" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture13" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture14" src="./Dice 1.svg" height="100" width="100">
-	<image id="diepicture15" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture12" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture13" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture14" src="./Images/Dice 1.svg" height="100" width="100">
+	<image id="diepicture15" src="./Images/Dice 1.svg" height="100" width="100">
 	<br>
 </body>
 
@@ -75,14 +77,14 @@ function rollIt() {
 function RollAnimation() {
 	dice = (Math.floor(Math.random() * 6) + 1);
 	for(i = 0; i < numDice; ++i) {
-		document.getElementById("diepicture" + i).src = "./Dice " + dice + ".svg";
+		document.getElementById("diepicture" + i).src = "./Images/Dice " + dice + ".svg";
 	}
 	
 	++j;
 	if (j > 20) {
 	for(i = 0; i < numDice; ++i) {
 		dice = (Math.floor(Math.random() * 6) + 1);
-		document.getElementById("diepicture" + i).src = "./Dice " + dice + ".svg";
+		document.getElementById("diepicture" + i).src = "./Images/Dice " + dice + ".svg";
 	}
 		clearInterval(varInterval);
 	}

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
-<b> Example text </b> <br>
+<head>
+<title> Pong </title>
+	<nav>
+		<h4>
+			<a href="./index.html">Homepage</a> &nbsp;&nbsp;
+			<a href="./DiceRoll.html">Dice Roller</a>
+		</h4>
+	</nav>
+</head>
+<br>
 
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 <script>
@@ -16,6 +25,7 @@ var player2Score = 0;
 const WINNING_SCORE = 1;
 var showingWinScreen = false;
 var showingTitleScreen = true;
+var mouseOverSettings = false;
 
 var paddle1Y = 200;
 var paddle2Y = 200;
@@ -44,11 +54,16 @@ function handleMouseClick(evt) {
 		player2Score = 0;
 		showingWinScreen = false;
 	}
+	if (showingTitleScreen) {
+		showingTitleScreen = false;
+	}
 }
 
 window.onload = function() {
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
+	
+	showingTitleScreen = true;
 	
 	ballSpeedX = canvas.width / 80;
 	ballSpeedY = canvas.height / 150;
@@ -77,17 +92,7 @@ window.onload = function() {
 function TitleScreen() {
 	colorRect(0, 0, canvas.width, canvas.height, 'black');
 	colorText("PONG!", canvas.width / 2, canvas.height * 0.33 ,"Arial",(canvas.height*canvas.width) / 8000);
-	colorText("Click to play!", canvas.width / 2, canvas.height * 0.7, "Arial");
-	colorText("settings", canvas.width / 12, canvas.height * (11/12), "Arial", (canvas.height*canvas.width) / 32000, "left");
-	showingTitleScreen = true;
-	
-	var settingsWidth = canvasContext.measureText("settings");
-	
-		if ((mousePos.x > (canvas.width / 12) && mousePos.x < (canvas.width / 12 + settingsWidth.width)) && (mousePos.y < canvas.height * (11/12) && mousePos.y > (canvas.height * (11/12)) - (canvas.height*canvas.width) / 32000)) {
-			colorRect(canvas.width / 12, (canvas.height * (11/12)) + (canvas.height*canvas.width) / 64000, settingsWidth.width, 2, 'white');
-			}
-		return;
-	
+	colorText("Click to play!", canvas.width / 2, canvas.height * 0.7, "Arial");	
 }
 
 function ballReset() {
