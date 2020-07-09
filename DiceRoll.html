@@ -15,7 +15,7 @@
 			<input type="number" id="numDice" name="numDice" min="1" max="16">
 	</form>
 	<p>
-	<button onclick="NumDice()"> Submit Number </button>
+	<button onclick="NumDice()" id="startRoll"> Submit Number </button>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<button onclick="rollIt()"> Click me to roll the dice! </button>
 	</p>
@@ -50,6 +50,14 @@ var dice;
 var randNum;
 var varInterval;
 var numDice
+
+var input = document.getElementById("numDice");
+input.addEventListener("keydown", function(evt) {
+  if (event.keyCode == 13) {
+   event.preventDefault();
+   NumDice();
+  }
+});
 
 function NumDice() {
 	numDice = document.getElementById("numDice").value;
