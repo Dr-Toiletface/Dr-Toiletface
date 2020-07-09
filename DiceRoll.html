@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<title> Dice Roller </title>
+<head>
+	<nav>
+		<a href="./game.html"> Pong </a>
+		<a href="./index.html"> Homepage </a>
+	</nav>
+</head>
+<body>
+	<form>
+			<h3>How many dice do you want to roll?</h3>
+			<input type="number" id="numDice" name="numDice" min="1" max="16">
+	</form>
+	<p>
+	<button onclick="NumDice()"> Submit Number </button>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<button onclick="rollIt()"> Click me to roll the dice! </button>
+	</p>
+	<br>
+	<image id="diepicture0" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture1" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture2" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture3" src="./Dice 1.svg" height="100" width="100">
+	<br>
+	<image id="diepicture4" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture5" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture6" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture7" src="./Dice 1.svg" height="100" width="100">
+	<br>
+	<image id="diepicture8" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture9" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture10" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture11" src="./Dice 1.svg" height="100" width="100">
+	<br>
+	<image id="diepicture12" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture13" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture14" src="./Dice 1.svg" height="100" width="100">
+	<image id="diepicture15" src="./Dice 1.svg" height="100" width="100">
+	<br>
+</body>
+
+<script>
+
+var i;
+var j;
+var dice;
+var randNum;
+var varInterval;
+var numDice
+
+function NumDice() {
+	numDice = document.getElementById("numDice").value;
+	if (!(numDice > 0 && numDice <=16)) {
+		numDice = 1;
+	}
+	
+	for (i = 0; i <= 15; ++i) {
+			let x = document.getElementById("diepicture" + i);
+			x.style.visibility = "hidden";
+		}
+	
+	for (i = 0; i < numDice; ++i) {
+		let x = document.getElementById("diepicture" + i);
+		x.style.visibility = "visible";
+	}
+}
+
+function rollIt() {
+	j = 0;
+	randNum = Math.floor(Math.random() * 6) + 1;
+	varInterval = setInterval(RollAnimation, 50);
+}
+
+function RollAnimation() {
+	dice = (Math.floor(Math.random() * 6) + 1);
+	for(i = 0; i < numDice; ++i) {
+		document.getElementById("diepicture" + i).src = "./Dice " + dice + ".svg";
+	}
+	
+	++j;
+	if (j > 20) {
+	for(i = 0; i < numDice; ++i) {
+		dice = (Math.floor(Math.random() * 6) + 1);
+		document.getElementById("diepicture" + i).src = "./Dice " + dice + ".svg";
+	}
+		clearInterval(varInterval);
+	}
+}
+
+
+
+</script>
+
+</html>
