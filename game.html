@@ -108,10 +108,10 @@ function ballReset() {
 function computerMovement() {
 	var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
 	if(paddle2YCenter < ballY - canvas.height / 20) {
-		paddle2Y += canvas.height / 70;
+		paddle2Y += canvas.height / 50;
 	}
 	else if(paddle2YCenter > ballY + canvas.height / 20) {
-		paddle2Y -= canvas.height / 70;
+		paddle2Y -= canvas.height / 50;
 	}
 }
 
